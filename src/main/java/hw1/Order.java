@@ -11,19 +11,25 @@ package hw1;
 
 Все поля и прочие служебные методы не должны быть доступны для пользователя классов Order из вне.*/
 
+import javax.swing.*;
 import java.util.Date;
+import java.util.HashMap;
 
 public abstract class Order {
-    float price;
-    String name;
-    String[] items = new String[];
-    Date date;
+    static String nameOrder;
+    static String priceOrder;
+    static Date dateOrder;
+    static HashMap<String, Number> items = new HashMap<>();
+    public Order(String priceOrder, String nameOrder, Date dateOrder){
+        this.priceOrder = String.format("%.2f", priceOrder);
+        this.nameOrder = nameOrder;
+        this.dateOrder = dateOrder;
 
-    public String getOrder(){
-        return name+"-"+price+"-"+date;
     }
-
-    public void addItem(String item, Number itemPrice){
-
+    public String getOrder(){
+        return nameOrder+"-"+priceOrder+"-"+dateOrder;
+    }
+    public void addItem(String itemName, Number itemPrice){
+            items.put(itemName, itemPrice);
     }
 }

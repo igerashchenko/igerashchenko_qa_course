@@ -12,7 +12,13 @@ package hw1;
 Все поля и прочие служебные методы не должны быть доступны для пользователя классов Order из вне.
 */
 
-public class ServiceOrder extends Order{
-    String serviceType;
+import java.util.Date;
 
+public class ServiceOrder extends Order{
+    static String serviceType;
+
+    public ServiceOrder(String priceOrder, String nameOrder, Date dateOrder, String serviceType) {
+        super(priceOrder, nameOrder, dateOrder);
+        this.serviceType = serviceType;
+    }
 }

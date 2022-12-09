@@ -13,13 +13,14 @@ import java.util.Scanner;
  */
 public class Switching {
     public static void main(String[] args) {
-        Scanner sc = new Scanner();
-        inBytes(String.valueOf(sc));
+        Scanner sc = new Scanner(System.in);
+        String input = sc.next();
+        inBytes(input);
     }
 
     public static void inBytes(String message){
         String n;
-        switch (message.endsWith(String n)){
+        switch (message.endsWith(n)){
             case n = "K":
                 System.out.println("In 1 kilobyte 1000 bytes");
                 break;
